@@ -16,7 +16,7 @@ import java.io.IOException
 
  */
 class USBSource : SerialInputOutputManager.Listener {
-    private lateinit var port: UsbSerialPort
+    /*private*/ lateinit var port: UsbSerialPort
     private val tag = "USBSource"
     private lateinit var usbIoManager : SerialInputOutputManager
 
@@ -53,6 +53,7 @@ class USBSource : SerialInputOutputManager.Listener {
         port.write(message,timeout)
     }
 
+    ///////////////////////////////////////////////////////////////////////////
     override fun onNewData(data: ByteArray?) {
         if (data == null) return
 
@@ -65,6 +66,7 @@ class USBSource : SerialInputOutputManager.Listener {
         }
     }
 
+    //////////////////////////////////////////////////////////////////////////
     override fun onRunError(e: java.lang.Exception?) {
         if (e != null) {
             Log.e(tag,"An error occurred which caused the thread to stop !")

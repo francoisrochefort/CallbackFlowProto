@@ -13,6 +13,7 @@ import java.lang.IllegalStateException
  * Call [connect] to initialize the connection
  */
 object USBRepository {
+
     private lateinit var source : USBSource
     private var connected : Boolean = false
 
